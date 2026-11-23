@@ -71,7 +71,7 @@ RUN uv pip install dist/*.whl --no-deps
 # safe to COPY into the distroless final stage without dragging in a
 # shell or libc. Pinning the version (NOT :latest) keeps builds
 # reproducible.
-FROM denoland/deno:bin-2.1.4 AS deno-binary
+FROM denoland/deno:bin-2.9.8@sha256:b507583d3c68ba69f3ed2ce5969ae5b8b70f43421c781279c7aea06435263543 AS deno-binary
 
 # Pre-download the CPython WASM binary so the WASM sandbox provider works
 # inside the distroless final image without network egress or a writable
